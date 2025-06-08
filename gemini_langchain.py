@@ -2,9 +2,12 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv(), override=True)
 
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyD5zU6Se0-MwQPRl7AkjeG79TsdrqnGCRY"
+load_dotenv()
+
 
 
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
